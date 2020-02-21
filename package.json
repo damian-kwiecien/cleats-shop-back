@@ -4,17 +4,30 @@
   "description": "",
   "main": "src/index.ts",
   "scripts": {
-    "start": "tsnd src/index.ts",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "prebuild": "tslint -c tslint.json -p tsconfig.json --fix --force",
+    "build": "tsc",
+    "start": "set NODE_ENV=development&& tsnd src/index.ts"
   },
   "author": "Damian Kwiecień",
   "license": "ISC",
   "dependencies": {
-    "express": "^4.17.1"
+    "body-parser": "^1.19.0",
+    "cors": "^2.8.5",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "reflect-metadata": "^0.1.13",
+    "typedi": "^0.8.0",
+    "typeorm": "^0.2.22",
+    "typeorm-typedi-extensions": "^0.2.3"
   },
   "devDependencies": {
+    "@types/body-parser": "^1.19.0",
+    "@types/cors": "^2.8.6",
     "@types/express": "^4.17.2",
+    "@types/mysql": "^2.15.8",
     "@types/node": "^13.7.4",
+    "@types/reflect-metadata": "^0.1.0",
+    "nodemon": "^2.0.2",
     "ts-node-dev": "^1.0.0-pre.44",
     "tslint": "^6.0.0",
     "typescript": "^3.8.2"
